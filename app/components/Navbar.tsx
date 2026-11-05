@@ -6,10 +6,12 @@ import Link from "next/link";
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [overLight, setOverLight] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      setOverLight(window.scrollY > window.innerHeight * 2.65);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -21,9 +23,11 @@ export default function Navbar() {
       <header className="pointer-events-none fixed left-0 right-0 top-[51px] z-40 hidden justify-center px-5 lg:flex">
         <nav
           className={`pointer-events-auto flex h-[78px] w-[min(1000px,calc(100vw-40px))] items-center justify-between rounded-[25px] border px-8 transition-[background-color,border-color,box-shadow] duration-300 ${
-            scrolled
-              ? "border-[#4a5469]/80 bg-[#252b37]/95 shadow-[0_18px_48px_rgba(10,12,20,.28)] backdrop-blur-xl"
-              : "border-[#465169]/85 bg-[#232935]/96 backdrop-blur-md"
+            overLight
+              ? "border-[#667083]/80 bg-[#515865]/95 shadow-[0_18px_48px_rgba(30,35,51,.25)] backdrop-blur-xl"
+              : scrolled
+                ? "border-[#4a5469]/80 bg-[#252b37]/95 shadow-[0_18px_48px_rgba(10,12,20,.28)] backdrop-blur-xl"
+                : "border-[#465169]/85 bg-[#232935]/96 backdrop-blur-md"
           }`}
         >
           {/* Logo */}

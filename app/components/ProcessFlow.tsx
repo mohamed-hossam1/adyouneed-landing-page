@@ -16,12 +16,12 @@ function StepLayer({ index, progress, children }: { index: number; progress: Mot
   const y = useTransform(progress, motionRange, index === 0 ? [0, 0, -150] : [170, 0, 0, index === 4 ? 0 : -150]);
   const opacity = useTransform(progress, motionRange, index === 0 ? [1, 1, 0.36] : [0, 1, 1, index === 4 ? 1 : 0.36]);
   const scale = useTransform(progress, index === 0 ? [0, exit] : [enter, settle, exit], index === 0 ? [1, 0.93] : [0.965, 1, index === 4 ? 1 : 0.93]);
-  return <motion.div style={{ y, opacity, scale, zIndex: index + 2 }} className="absolute inset-x-[4%] top-[9%] h-[82%] origin-top">{children}</motion.div>;
+  return <motion.div style={{ y, opacity, scale, zIndex: index + 2 }} className="absolute inset-x-[3%] top-[6%] h-[88%] origin-top">{children}</motion.div>;
 }
 
 function Panel({ step, title, description, children }: { step: number; title: string; description: string; children: React.ReactNode }) {
   return (
-    <article className="relative h-full overflow-hidden rounded-[22px] border border-white bg-white/95 p-5 shadow-[0_24px_64px_rgba(101,84,177,.14)] sm:p-7">
+    <article className="relative h-full overflow-hidden rounded-[24px] border border-white bg-white/95 p-6 shadow-[0_24px_64px_rgba(101,84,177,.14)] sm:p-9">
       <div className="absolute right-6 top-4 text-[clamp(2.6rem,5vw,5rem)] font-light tracking-tight text-[#d7d9e8]">Step {step}</div>
       <div className="relative z-10">
         <h3 className="text-xl font-semibold text-[#6437fc] sm:text-2xl">{title}</h3>
@@ -65,20 +65,20 @@ export default function ProcessFlow() {
 
   return (
     <section ref={root} id="workflow" className="relative h-[590vh] bg-[#eef0ff] text-[#111321]">
-      <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden px-3 pt-[13vh] sm:px-6">
-        <div className="mb-6 text-center sm:mb-8">
-          <h2 className="text-[clamp(1.8rem,3.15vw,3.4rem)] font-semibold leading-[1.06] tracking-[-0.035em]">
+      <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden px-3 pt-[8.5vh] sm:px-6">
+        <div className="mb-7 text-center sm:mb-8">
+          <h2 className="text-[clamp(2.3rem,3.35vw,4rem)] font-semibold leading-[1.04] tracking-[-0.04em]">
             Creating the ad you need<br />has never been easier or more beautiful.
           </h2>
         </div>
 
-        <div className="relative h-[min(63vh,650px)] w-full max-w-[1190px] overflow-hidden rounded-[24px] border border-white/80 bg-[#f4f4ff] shadow-[0_26px_75px_rgba(73,64,118,.08)] sm:rounded-[30px]">
+        <div className="relative h-[min(72vh,676px)] w-full max-w-[1187px] overflow-hidden rounded-[24px] border border-white/80 bg-[#f4f4ff] shadow-[0_26px_75px_rgba(73,64,118,.08)] sm:rounded-[30px]">
           <img src={`${CDN}646f473912e13b067016e3c1_bg-process.svg`} alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-75" />
-          <div className="relative z-20 flex h-[74px] items-center gap-3 border-b border-[#dfe2f0] bg-white/40 px-5 text-[#51586e] backdrop-blur-sm sm:px-8">
+          <div className="relative z-20 flex h-[82px] items-center gap-3 border-b border-[#dfe2f0] bg-white/40 px-5 text-[#51586e] backdrop-blur-sm sm:px-8">
             <Rocket className="h-5 w-5" /><strong className="text-base sm:text-lg">Create an Ad</strong><span className="text-xs sm:text-sm">You are creating a new ad.</span>
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 top-[74px]">
+          <div className="absolute inset-x-0 bottom-0 top-[82px]">
             <StepLayer index={0} progress={activeProgress}>
               <Panel step={1} title="Select a platform!" description="Choose the platform on which to advertise.">
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">

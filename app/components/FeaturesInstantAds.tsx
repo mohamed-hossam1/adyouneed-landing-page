@@ -7,40 +7,40 @@ export default function FeaturesInstantAds() {
   const [url, setUrl] = useState("https://www.adyouneed.com");
 
   return (
-    <section className="relative w-full bg-[#eef0ff] text-[#0b0d17] py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative w-full bg-[#eef0ff] px-4 py-[150px] text-[#0b0d17] sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1185px]">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="mx-auto mb-[100px] max-w-[920px] text-center">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#6437fc]/10 text-[#6437fc] text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             New Feature
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#0b0d17] mb-4">
+          <h2 className="mb-5 text-[clamp(3.5rem,4.2vw,5rem)] font-bold leading-[.98] tracking-[-0.045em] text-[#141622]">
             One Click <br className="hidden sm:inline" />
             Instant Ads
           </h2>
-          <p className="text-base sm:text-lg text-slate-500 leading-relaxed">
+          <p className="text-[clamp(1rem,1.16vw,1.4rem)] leading-[1.45] text-[#171923]">
             Generate all your ad creatives, texts, and audiences, and publish result bringing ads with a single click. The fastest end-to-end ad creation on the planet.
           </p>
         </div>
 
         {/* Card 1: Instant AI-Driven Campaigns */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm mb-6 flex flex-col lg:flex-row items-center gap-8 hover:shadow-md transition-shadow">
-          <div className="lg:w-1/2 space-y-4">
+        <div className="mb-7 flex min-h-[345px] flex-col items-center gap-10 rounded-[25px] border border-white bg-white/75 p-10 shadow-sm transition-shadow hover:shadow-md lg:flex-row lg:p-[52px]">
+          <div className="space-y-5 lg:w-[46%]">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-100 text-xs font-medium text-slate-700">
               <span className="text-slate-400">Powered by</span>
               <strong className="text-slate-900 font-bold">AdCreative.ai</strong>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#0b0d17]">
+            <h3 className="text-[34px] font-semibold tracking-[-0.035em] text-[#11131d]">
               Instant AI-Driven Campaigns
             </h3>
-            <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
+            <p className="text-[17px] leading-[1.48] text-[#344669]">
               Provide your website URL, and let our advanced AI powered by AdCreative.ai generate all the visuals, texts, and audiences in a matter of seconds. Select the ones you like and click publish. The world&apos;s fastest high-conversion rate ad publishing workflow.
             </p>
           </div>
 
           {/* Ad Creative Mockups Display */}
-          <div className="lg:w-1/2 flex items-center justify-center gap-3 overflow-x-auto py-2 w-full">
+          <div className="flex w-full items-center justify-center gap-3 overflow-x-auto py-2 lg:w-[54%]">
             {[
               {
                 score: "98/100",
@@ -93,10 +93,10 @@ export default function FeaturesInstantAds() {
         </div>
 
         {/* Row 2: AI Scanner & One Click Publish */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-7 lg:grid-cols-2">
           {/* Card 2: AI Website Scanner */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-            <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 mb-6 space-y-4">
+          <div className="flex min-h-[560px] flex-col justify-between rounded-[25px] border border-white bg-white/75 p-10 shadow-sm transition-shadow hover:shadow-md lg:p-[52px]">
+            <div className="mb-8 min-h-[260px] space-y-5 rounded-[18px] border border-slate-100 bg-slate-50 p-6">
               <div className="flex items-center justify-between bg-white border border-slate-200 rounded-xl px-4 py-2.5 shadow-2xs">
                 <div className="flex items-center gap-2 text-xs text-slate-700 flex-1 mr-2">
                   <Globe className="w-4 h-4 text-slate-400 shrink-0" />
@@ -130,16 +130,16 @@ export default function FeaturesInstantAds() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-[#0b0d17] mb-1">AI Website Scanner</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">
+              <h3 className="mb-2 text-[34px] font-semibold tracking-[-0.035em] text-[#11131d]">AI Website Scanner</h3>
+              <p className="text-[17px] leading-[1.48] text-[#344669]">
                 Provide your product/service URL, and let us fine-tune your AI model that knows everything about your product.
               </p>
             </div>
           </div>
 
           {/* Card 3: One Click Publish! */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-            <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 mb-6 flex flex-col items-center justify-center min-h-[160px] relative overflow-hidden">
+          <div className="flex min-h-[560px] flex-col justify-between rounded-[25px] border border-white bg-white/75 p-10 shadow-sm transition-shadow hover:shadow-md lg:p-[52px]">
+            <div className="relative mb-8 flex min-h-[260px] flex-col items-center justify-center overflow-hidden rounded-[18px] border border-slate-100 bg-slate-50 p-6">
               {/* Circuit SVG Lines */}
               <svg
                 viewBox="0 0 300 80"
@@ -158,8 +158,8 @@ export default function FeaturesInstantAds() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-[#0b0d17] mb-1">One Click Publish!</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">
+              <h3 className="mb-2 text-[34px] font-semibold tracking-[-0.035em] text-[#11131d]">One Click Publish!</h3>
+              <p className="text-[17px] leading-[1.48] text-[#344669]">
                 Select the AI-generated creatives you like and click to publish your result-bringing ads with a single click.
               </p>
             </div>

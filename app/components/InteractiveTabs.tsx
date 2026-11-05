@@ -41,14 +41,14 @@ export default function InteractiveTabs() {
   const current = TABS[activeTab];
 
   return (
-    <section className="relative w-full bg-[#eef0ff] pb-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="relative rounded-3xl bg-[#141824] border border-white/10 p-6 sm:p-10 shadow-2xl overflow-hidden">
+    <section className="relative w-full bg-[#eef0ff] px-4 pb-[150px] sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1500px]">
+        <div className="relative min-h-[890px] overflow-hidden rounded-[38px] border border-white/10 bg-[linear-gradient(115deg,#2b2648_0%,#24213d_36%,#1a1e29_72%)] px-6 pb-20 pt-20 shadow-[0_34px_90px_rgba(34,30,58,.18)] sm:px-10 lg:px-[158px] lg:pt-[120px]">
           {/* Subtle ambient light glow */}
           <div className="absolute -top-32 -left-32 w-80 h-80 bg-[#6437fc]/20 blur-[100px] pointer-events-none" />
 
           {/* Tab Button Selector */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-10 pb-4 border-b border-white/5">
+          <div className="mb-10 flex flex-wrap items-center gap-3 border-b border-white/5 pb-4 sm:gap-3">
             {TABS.map((tab, idx) => {
               const Icon = tab.icon;
               const isActive = activeTab === idx;
@@ -58,9 +58,9 @@ export default function InteractiveTabs() {
                   onClick={() => setActiveTab(idx)}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
                     isActive
-                      ? "bg-[#6437fc] text-white shadow-lg shadow-[#6437fc]/30"
+                      ? "border-[#6f4cff] bg-[#242b39] text-white shadow-[0_0_0_5px_rgba(100,55,252,.12)]"
                       : "bg-[#1c2233] text-slate-400 hover:text-white hover:bg-[#252c42]"
-                  }`}
+                  } h-[59px] rounded-full border border-white/[.07] px-7 text-[18px] font-medium`}
                 >
                   <Icon className="w-4 h-4" />
                   <span>{tab.label}</span>
@@ -70,18 +70,18 @@ export default function InteractiveTabs() {
           </div>
 
           {/* Tab Content Display */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 items-start gap-10 lg:-mt-[100px] lg:grid-cols-[500px_850px] lg:gap-[76px]">
             {/* Left Info Column */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="w-12 h-12 rounded-2xl bg-[#6437fc]/20 text-[#6437fc] flex items-center justify-center border border-[#6437fc]/30">
-                <current.icon className="w-6 h-6 text-white" />
+            <div className="space-y-7 lg:pt-[270px]">
+              <div className="flex h-[78px] w-[78px] items-center justify-center rounded-[22px] border border-[#6437fc]/30 bg-[#6437fc]/10 text-[#6437fc]">
+                <current.icon className="h-9 w-9 text-[#6437fc]" />
               </div>
 
-              <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              <h3 className="text-[clamp(3.4rem,4.2vw,5rem)] font-normal leading-none tracking-[-0.045em] text-white">
                 {current.title}
               </h3>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="max-w-[560px] text-[20px] leading-[1.42] text-[#c3c9e0]">
                 {current.description}
               </p>
 
@@ -90,7 +90,7 @@ export default function InteractiveTabs() {
                   href="https://suite.adyouneed.com/authentication/register"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-[#6437fc] hover:bg-[#5229db] text-white text-xs font-semibold tracking-wide shadow-lg shadow-[#6437fc]/30 transition-transform active:scale-95"
+                  className="inline-flex h-[72px] w-[264px] items-center justify-center rounded-full border border-[#6742d1]/80 bg-[#202330] text-[17px] font-semibold text-white shadow-[0_18px_44px_rgba(100,55,252,.24)] transition-transform active:scale-95"
                 >
                   Start Your Free Trial
                 </a>
@@ -98,8 +98,8 @@ export default function InteractiveTabs() {
             </div>
 
             {/* Right Screenshot Column */}
-            <div className="lg:col-span-7">
-              <div className="rounded-2xl border border-white/10 bg-[#0b0d17] p-2 shadow-2xl overflow-hidden transition-all duration-300">
+            <div className="w-full lg:w-[850px]">
+              <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#0b0d17] p-2.5 shadow-2xl transition-all duration-300">
                 <img
                   src={current.image}
                   alt={current.title}
