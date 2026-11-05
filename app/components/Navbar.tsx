@@ -17,13 +17,13 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Desktop Floating Glass Pill Navbar */}
-      <header className="hidden lg:flex fixed top-5 left-0 right-0 z-40 justify-center px-4 pointer-events-none">
+      {/* Desktop floating navigation */}
+      <header className="pointer-events-none fixed left-0 right-0 top-[51px] z-40 hidden justify-center px-5 lg:flex">
         <nav
-          className={`pointer-events-auto flex items-center justify-between px-6 py-2.5 rounded-full border border-white/10 transition-all duration-300 ${
+          className={`pointer-events-auto flex h-[78px] w-[min(1000px,calc(100vw-40px))] items-center justify-between rounded-[25px] border px-8 transition-[background-color,border-color,box-shadow] duration-300 ${
             scrolled
-              ? "bg-[#0b0d17]/85 backdrop-blur-xl shadow-2xl shadow-black/60 w-[840px]"
-              : "bg-[#0b0d17]/70 backdrop-blur-md w-[860px]"
+              ? "border-[#4a5469]/80 bg-[#252b37]/95 shadow-[0_18px_48px_rgba(10,12,20,.28)] backdrop-blur-xl"
+              : "border-[#465169]/85 bg-[#232935]/96 backdrop-blur-md"
           }`}
         >
           {/* Logo */}
@@ -31,12 +31,12 @@ export default function Navbar() {
             <img
               src="https://cdn.prod.website-files.com/646bbbfbff79188751a8200e/655ce23542ba6981a253de77_adyouneed-light.svg"
               alt="ADYOUNEED Logo"
-              className="h-6 w-auto transition-transform group-hover:scale-105"
+              className="h-auto w-[182px] transition-transform group-hover:scale-[1.02]"
             />
           </Link>
 
           {/* Nav Links */}
-          <div className="flex items-center gap-7 text-sm font-medium text-slate-300">
+          <div className="flex items-center gap-[66px] text-[16px] font-normal text-[#f1f2f5]">
             <Link
               href="#home"
               className="hover:text-white transition-colors"
@@ -70,7 +70,7 @@ export default function Navbar() {
             href="https://suite.adyouneed.com/authentication/register"
             target="_blank"
             rel="noreferrer"
-            className="px-5 py-2 rounded-full text-xs font-semibold bg-[#1a1f2e] hover:bg-[#252c40] text-white border border-white/10 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md shadow-black/40"
+            className="inline-flex h-[51px] w-[151px] items-center justify-center rounded-[25px] border border-[#202532] bg-[#1b1e28] text-[16px] font-normal text-white shadow-[0_8px_20px_rgba(8,10,18,.24)] transition-colors duration-200 hover:bg-[#262b38]"
           >
             Get Started
           </a>
