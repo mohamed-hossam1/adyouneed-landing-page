@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, Edit3, Compass, BarChart3, ArrowRight } from "lucide-react";
+import { Check, Edit3, Compass } from "lucide-react";
 
 export default function FeaturesOneTool() {
   const [campaignName, setCampaignName] = useState("Campaign Name Here");
   const [budget, setBudget] = useState("0.86");
 
   return (
-    <section id="features" className="relative z-20 -mt-12 w-full rounded-t-[38px] bg-[#eef0ff] px-4 pb-24 pt-[150px] text-[#0b0d17] sm:rounded-t-[52px] sm:px-6 lg:px-8">
+    <section id="features" className="relative z-20 -mt-12 mx-[3.15vw] w-auto rounded-t-[38px] bg-[#eef0ff] px-4 pb-24 pt-[165px] text-[#0b0d17] sm:rounded-t-[52px] sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1185px]">
         {/* Header */}
         <div className="mx-auto mb-[96px] max-w-[930px] text-center">
@@ -16,17 +16,17 @@ export default function FeaturesOneTool() {
             One tool <br />
             to rule them all
           </h2>
-          <p className="text-[clamp(1rem,1.16vw,1.4rem)] leading-[1.45] text-[#171923]">
+          <p className="mx-auto max-w-[650px] text-[clamp(1rem,1.16vw,1.4rem)] leading-[1.45] text-[#171923]">
             Create winning ads in minutes across top platforms, even if it’s your first time.
           </p>
         </div>
 
         {/* 6-Card Grid */}
-        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-x-7 gap-y-12 md:grid-cols-2 lg:grid-cols-12">
           {/* Card 1: Create */}
-          <div className="flex min-h-[365px] flex-col justify-between rounded-[25px] border border-white bg-white/65 p-6 shadow-sm transition-shadow hover:shadow-md md:col-span-2 lg:col-span-6 lg:h-[365px]">
-            <div className="mb-5 flex items-center gap-4">
-              <div className="flex-1 space-y-2">
+          <div className="relative flex min-h-[365px] flex-col justify-between rounded-[25px] border border-white bg-white/65 p-6 shadow-sm transition-shadow hover:shadow-md md:col-span-2 lg:col-span-6 lg:h-[365px]">
+            <div className="relative mb-2 h-[190px]">
+              <div className="w-[295px] space-y-2">
                 {[
                   { step: "Step 1/5", label: "Platform", active: false, done: true },
                   { step: "Step 2/5", label: "Objective", active: false, done: true },
@@ -53,7 +53,7 @@ export default function FeaturesOneTool() {
                   </div>
                 ))}
               </div>
-              <div className="w-[130px] shrink-0">
+              <div className="absolute -right-[13px] -top-[50px] w-[240px]">
                 <img
                   src="https://cdn.prod.website-files.com/646bbbfbff79188751a8200e/66b9fe141d3d9ff1c572b6e3_ayn-bg.svg"
                   alt="Phone preview"
@@ -71,7 +71,7 @@ export default function FeaturesOneTool() {
 
           {/* Card 2: Manage */}
           <div className="flex min-h-[365px] flex-col justify-between rounded-[25px] border border-white bg-white/65 p-9 shadow-sm transition-shadow hover:shadow-md lg:col-span-3 lg:h-[365px]">
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 mb-6 space-y-3">
+            <div className="-mx-[15px] mb-6 space-y-3 rounded-xl border border-slate-100 bg-slate-50 p-4">
               <div className="flex items-center justify-between text-xs font-semibold text-slate-600">
                 <span>Campaign Edit</span>
                 <Edit3 className="w-3.5 h-3.5 text-slate-400" />
@@ -108,7 +108,7 @@ export default function FeaturesOneTool() {
 
           {/* Card 3: Diversify */}
           <div className="flex min-h-[365px] flex-col justify-between rounded-[25px] border border-white bg-white/65 p-9 shadow-sm transition-shadow hover:shadow-md lg:col-span-3 lg:h-[365px]">
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 mb-6">
+            <div className="-mx-[15px] mb-6 h-[170px] overflow-hidden rounded-xl border border-slate-100 bg-slate-50 p-3">
               <div className="grid grid-cols-4 gap-2 mb-3">
                 {[
                   "https://cdn.prod.website-files.com/646bbbfbff79188751a8200e/646bdaf03212642b3d63eb80_meta-icon.svg",
@@ -143,7 +143,7 @@ export default function FeaturesOneTool() {
 
           {/* Card 4: Protect */}
           <div className="flex min-h-[365px] flex-col justify-between rounded-[25px] border border-white bg-white/65 p-9 shadow-sm transition-shadow hover:shadow-md lg:col-span-3 lg:h-[365px]">
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 mb-6">
+            <div className="-mx-[15px] mb-6 h-[170px] overflow-hidden rounded-xl border border-slate-100 bg-slate-50 p-4">
               <div className="flex items-center justify-between text-xs font-semibold text-slate-600 mb-3">
                 <span>Campaign Edit</span>
                 <div className="w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center">
@@ -179,7 +179,7 @@ export default function FeaturesOneTool() {
 
           {/* Card 5: Understand */}
           <div className="flex min-h-[365px] flex-col justify-between rounded-[25px] border border-white bg-white/65 p-9 shadow-sm transition-shadow hover:shadow-md lg:col-span-3 lg:h-[365px]">
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 mb-6 flex flex-col justify-end h-[140px] relative overflow-hidden">
+            <div className="relative -mx-[15px] mb-6 flex h-[170px] flex-col justify-end overflow-hidden rounded-xl border border-slate-100 bg-slate-50 p-4">
               {/* Wave SVG */}
               <svg
                 viewBox="0 0 200 60"
@@ -209,9 +209,6 @@ export default function FeaturesOneTool() {
           {/* Card 6: Try it for free! (Dark CTA Card) */}
           <div className="flex min-h-[365px] flex-col justify-between rounded-[25px] bg-[#24223d] p-9 text-white shadow-lg transition-transform hover:scale-[1.005] md:col-span-2 lg:col-span-6 lg:h-[365px]">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-[#6437fc]/20 text-[#6437fc] flex items-center justify-center mb-6">
-                <BarChart3 className="w-5 h-5 text-white" />
-              </div>
               <h3 className="mb-3 text-[36px] font-semibold tracking-[-0.03em]">Try it for free!</h3>
               <p className="text-[17px] leading-[1.45] text-[#e3e4ef]">
                 Create and manage the ad you need, absolutely free during the trial period.
@@ -221,10 +218,9 @@ export default function FeaturesOneTool() {
               href="https://suite.adyouneed.com/authentication/register"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex h-[70px] w-full items-center justify-center gap-2 rounded-full border border-[#39345f] bg-[#1d2130] text-[17px] font-semibold text-white shadow-[0_18px_45px_rgba(89,51,218,.2)] transition-colors hover:bg-[#292d3d]"
+              className="-mx-4 mt-6 inline-flex h-[70px] w-[calc(100%+2rem)] items-center justify-center rounded-full border border-[#39345f] bg-[#1d2130] text-[17px] font-semibold text-white shadow-[0_18px_45px_rgba(89,51,218,.2)] transition-colors hover:bg-[#292d3d]"
             >
               Start Your Free Trial
-              <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>

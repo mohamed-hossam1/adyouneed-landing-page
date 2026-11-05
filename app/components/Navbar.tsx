@@ -13,6 +13,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 20);
       setOverLight(window.scrollY > window.innerHeight * 2.65);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -20,7 +21,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop floating navigation */}
-      <header className="pointer-events-none fixed left-0 right-0 top-[51px] z-40 hidden justify-center px-5 lg:flex">
+      <header className={`pointer-events-none fixed left-0 right-0 z-40 hidden justify-center px-5 transition-[top] duration-300 lg:flex ${overLight ? "top-[59px]" : "top-[51px]"}`}>
         <nav
           className={`pointer-events-auto flex h-[78px] w-[min(1000px,calc(100vw-40px))] items-center justify-between rounded-[25px] border px-8 transition-[background-color,border-color,box-shadow] duration-300 ${
             overLight
