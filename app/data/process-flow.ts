@@ -1,4 +1,4 @@
-export const CDN = "https://cdn.prod.website-files.com/646bbbfbff79188751a8200e";
+export const CDN = "https://cdn.prod.website-files.com/646bbbfbff79188751a8200e/";
 
 export type Platform = {
   name: string;
