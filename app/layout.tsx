@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${robotoMono.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#080911] text-white font-sans antialiased selection:bg-[#6437fc] selection:text-white">
+    <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
+      <body className="min-h-screen overflow-x-hidden bg-[#171926] text-white font-sans antialiased selection:bg-[#6437fc] selection:text-white">
         {children}
       </body>
     </html>

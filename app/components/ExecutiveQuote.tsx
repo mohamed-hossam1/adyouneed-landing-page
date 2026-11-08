@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ExecutiveQuote() {
   return (
-    <section className="relative w-full bg-[#eef0ff] py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+    <section className="relative w-full bg-transparent py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         {/* AdCreative.ai Logo */}
         <img

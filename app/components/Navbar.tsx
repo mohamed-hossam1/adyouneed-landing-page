@@ -21,11 +21,11 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop floating navigation */}
-      <header className={`pointer-events-none fixed left-0 right-0 z-40 hidden justify-center px-5 transition-[top] duration-300 lg:flex ${overLight ? "top-[59px]" : "top-[51px]"}`}>
+      <header className={`pointer-events-none fixed left-0 right-0 z-40 hidden justify-center px-5 transition-[top] duration-300 lg:flex ${overLight ? "top-[60px]" : "top-[51px]"}`}>
         <nav
-          className={`pointer-events-auto flex h-[78px] w-[min(1000px,calc(100vw-40px))] items-center justify-between rounded-[25px] border px-8 transition-[background-color,border-color,box-shadow] duration-300 ${
+          className={`pointer-events-auto flex h-[78px] w-[min(994px,calc(100vw-40px))] items-center justify-between rounded-[24.8438px] border px-[31.8px] transition-[background-color,border-color,box-shadow] duration-300 ${
             overLight
-              ? "border-[#667083]/80 bg-[#515865]/95 shadow-[0_18px_48px_rgba(30,35,51,.25)] backdrop-blur-xl"
+              ? "border-[#42516b] bg-[#212936]/80 shadow-none backdrop-blur-[11px]"
               : scrolled
                 ? "border-[#4a5469]/80 bg-[#252b37]/95 shadow-[0_18px_48px_rgba(10,12,20,.28)] backdrop-blur-xl"
                 : "border-[#465169]/85 bg-[#232935]/96 backdrop-blur-md"
@@ -36,49 +36,51 @@ export default function Navbar() {
             <img
               src="https://cdn.prod.website-files.com/646bbbfbff79188751a8200e/655ce23542ba6981a253de77_adyouneed-light.svg"
               alt="ADYOUNEED Logo"
-              className="h-auto w-[182px] transition-transform group-hover:scale-[1.02]"
+              className="h-auto w-[181px] transition-transform group-hover:scale-[1.02]"
             />
           </Link>
 
           {/* Nav Links */}
-          <div className="flex items-center gap-[66px] text-[16px] font-normal text-[#f1f2f5]">
+          <div className="flex items-center gap-[37.7625px] text-[15.9px] font-medium leading-[19.08px] text-white">
             <Link
               href="#home"
-              className="hover:text-white transition-colors"
+              className="p-[15.9px] hover:text-white transition-colors"
             >
               Home Page
             </Link>
             <Link
               href="#features"
-              className="hover:text-white transition-colors"
+              className="p-[15.9px] hover:text-white transition-colors"
             >
               Features
             </Link>
             <Link
               href="#pricing"
-              className="hover:text-white transition-colors"
+              className="p-[15.9px] hover:text-white transition-colors"
             >
               Pricing
             </Link>
+          </div>
+
+          {/* Right Links + CTA */}
+          <div className="flex items-center gap-[31.8px]">
             <a
               href="https://app.adyouneed.com/authentication/login"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white transition-colors"
+              className="p-[15.9px] text-[15.9px] font-medium leading-[19.08px] text-[#c7bee4] transition-colors hover:text-white"
             >
               Login
             </a>
+            <a
+              href="https://suite.adyouneed.com/authentication/register"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-[52px] w-[148px] items-center justify-center rounded-[47.7px] bg-[#171926] text-[15.9px] font-normal text-white transition-colors duration-200 hover:bg-[#262b38]"
+            >
+              Get Started
+            </a>
           </div>
-
-          {/* CTA Button */}
-          <a
-            href="https://suite.adyouneed.com/authentication/register"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-[51px] w-[151px] items-center justify-center rounded-[25px] border border-[#202532] bg-[#1b1e28] text-[16px] font-normal text-white shadow-[0_8px_20px_rgba(8,10,18,.24)] transition-colors duration-200 hover:bg-[#262b38]"
-          >
-            Get Started
-          </a>
         </nav>
       </header>
 

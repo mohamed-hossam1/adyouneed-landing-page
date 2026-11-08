@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ProductHuntBadge() {
   return (
-    <div className="flex w-full flex-col items-center justify-center bg-[#eef0ff] px-4 py-[120px] text-center">
+    <div className="flex w-full flex-col items-center justify-center bg-transparent px-4 py-16 text-center">
       <div className="flex flex-col items-center">
         <img
           src="https://cdn.prod.website-files.com/646bbbfbff79188751a8200e/646f39b06c97c1e35fd5974d_product-of-the-day.svg"

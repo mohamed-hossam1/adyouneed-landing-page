@@ -57,13 +57,78 @@
 
 @keyframes dash {
   to {
-    stroke-dashoffset: -500;
+    stroke-dashoffset: 500;
   }
 }
 
 .path-dash {
   stroke-dasharray: 6;
-  animation: dash 12s linear infinite;
+  animation: dash 10s linear infinite;
+}
+
+@keyframes pond-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.35);
+    opacity: 0.55;
+  }
+  55% {
+    opacity: 0.22;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.35);
+    opacity: 0;
+  }
+}
+
+.pond-ripple {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  animation: pond-ripple 4.2s ease-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes pond-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(0.32);
+    opacity: 0;
+  }
+  14% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.28);
+    opacity: 0;
+  }
+}
+
+.pond-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 9999px;
+  border: 1px solid rgba(124, 136, 214, 0.45);
+  background: radial-gradient(circle, rgba(124, 136, 214, 0.05) 0%, rgba(255, 255, 255, 0) 62%);
+  box-shadow:
+    0 0 26px rgba(124, 136, 214, 0.18),
+    inset 0 0 26px rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  animation: pond-ring 4.2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes connector-travel {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -104;
+  }
+}
+
+.connector-travel {
+  animation: connector-travel 3.2s linear infinite;
 }
 
 @keyframes marquee-left {
@@ -143,10 +208,40 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+.testimonial-card-reveal {
+  opacity: 0;
+  transform: translate3d(0, 30%, 0);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.testimonial-card-reveal.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-led-pulse {
     animation: none;
     opacity: 0;
+  }
+
+  .pond-ripple {
+    animation: none;
+    opacity: 0;
+  }
+
+  .pond-ring {
+    animation: none;
+    opacity: 0;
+  }
+
+  .testimonial-card-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

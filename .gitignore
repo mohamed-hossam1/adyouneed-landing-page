@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Inspection scripts & temporary screenshots
+/screenshots/
+inspect-*.mjs
+shot-*.mjs
+crop.mjs
+debug-*.mjs

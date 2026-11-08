@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useTransform } from "framer-motion";
+import { useScrollProgress, useSectionPin } from "../hooks/useScrollProgress";
 
 const PLATFORMS = [
   ["Meta Ads", "646bdaf03212642b3d63eb80_meta-icon.svg"],
@@ -120,8 +121,10 @@ function HeroCurves() {
 
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
+  const stage = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: root, offset: ["start start", "end end"] });
+  const scrollYProgress = useScrollProgress(root, "top top", "bottom bottom");
+  useSectionPin(root, stage);
 
   const copyY = useTransform(scrollYProgress, [0, 0.42, 1], ["0vh", "-61vh", "-84vh"]);
   const copyOpacity = useTransform(scrollYProgress, [0, 0.44, 0.62], [1, 1, 0]);
@@ -133,8 +136,9 @@ export default function Hero() {
   const marqueesY = useTransform(scrollYProgress, [0.34, 0.92], ["18vh", "-38vh"]);
 
   return (
-    <section ref={root} id="home" className="relative h-[270vh] bg-[#1d202b] sm:h-[295vh]">
-      <div className="sticky top-0 mx-[2.75vw] h-screen overflow-hidden rounded-b-[52px] border-x border-b border-[#2d3443] bg-[#181a23] max-sm:mx-0 max-sm:rounded-b-[34px] max-sm:border-x-0">
+    <section ref={root} id="home" className="relative h-[270vh] bg-[#171926] sm:h-[295vh]">
+      <div ref={stage} className="relative h-screen">
+        <div className="relative h-full overflow-hidden rounded-b-[47.7px] border-x border-b border-[#42516b]/40 bg-[#181a23] mx-[3.125vw] max-sm:mx-0 max-sm:rounded-b-[34px] max-sm:border-x-0">
         <motion.div
           style={reduceMotion ? undefined : { y: curvesY }}
           className="pointer-events-none absolute inset-0 z-0 opacity-90"
@@ -211,6 +215,7 @@ export default function Hero() {
           <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#181a23] to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#181a23] to-transparent" />
         </motion.div>
+        </div>
       </div>
     </section>
   );

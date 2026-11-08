@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useTransform } from "framer-motion";
+import { useScrollProgress } from "../hooks/useScrollProgress";
 
 const CDN = "https://cdn.prod.website-files.com/646bbbfbff79188751a8200e/";
 
 export default function BottomCTA() {
   const root = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: root, offset: ["start end", "end start"] });
+  const scrollYProgress = useScrollProgress(root, "top bottom", "bottom top");
   const panelY = useTransform(scrollYProgress, [0, 0.55, 1], [130, 0, -35]);
   const screenY = useTransform(scrollYProgress, [0, 0.65, 1], [220, 25, -15]);
   const screenRotate = useTransform(scrollYProgress, [0, 0.65, 1], [18, 8, 3]);
